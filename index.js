@@ -4,8 +4,16 @@ const PORT = 8000
 
 app.use(express.json())
 
+const API_endpoints={
+    "/createRoom": "to create a room",
+    "/bookRoom": "to book a room",
+    "/booedRooms": "to list all rooms with the booked data",
+    "/bookedCustomers": "to list all customers with booked data",
+    "/bookingHistory/:customer": "to list how many times a customer has booked the room"
+}
+
 app.get('/', (req, res) => {
-    res.send("NodeJS Hall Booking Task")
+    res.send(API_endpoints)
 })
 
 var rooms = []
